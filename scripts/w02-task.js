@@ -12,7 +12,7 @@ const profilePicture = "images/FotoAUDpng.png";
 const nameElement = document.getElementById("name");
 const foodElement = document.getElementById("food");
 const yearElement = document.querySelector("#year");
-const imgElement = document.getElementsByTagName('img')[0];
+const imgElement = document.querySelector("img");
 
 
 
