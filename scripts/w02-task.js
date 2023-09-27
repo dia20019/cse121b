@@ -12,17 +12,17 @@ let profilePicture = "images/FotoAUDpng.png";
 const nameElement = document.getElementByID('name');
 const foodElement = document.getElementByID('food');
 const yearElement = document.querySelector('#year');
-const imageElement = document.getElementByID('main#home picture img');
+const imageElement = document.querySelector('images/FotoAUDpng.png');
 
 
 
 
 
 /* Step 4 - Adding Content */
-nameElement.innerHTML = `<strong>${fullName}<strong>`;
-textContent = 'currentYear';
+nameElement.innerHTML =`<strong>${fullName}</strong>`;
+yearElement.textContent = `${currentYear}`;
 imageElement.setAttribute('src', profilePicture);
-imageElement.setAttribute
+imageElement.setAttribute('ref',`Profile image of ${fullName}`);
 
 
 
