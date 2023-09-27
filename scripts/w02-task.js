@@ -12,16 +12,16 @@ let profilePicture = "images/FotoAUDpng.png";
 const nameElement = document.getElementByID('name');
 const foodElement = document.getElementByID('food');
 const yearElement = document.querySelector('#year');
-const imgElement = document.getElementsByTagName('img')[0];
+const imgElement = document.createElement('img');
 
 
 
 
 /* Step 4 - Adding Content */
-nameElement.innerHTML =`<strong>${fullName}</strong>`;
+nameElement.innerHTML ='<strong>' + fullName + '</strong>';
 yearElement.textContent = currentYear;
-imageElement.setAttribute('src', profilePicture);
-imageElement.setAttribute('alt',`Profile image of ${fullName}`);
+imageElement.setAttribute("src", profilePicture);
+imageElement.setAttribute("alt","Profile image of Alejandro Uribe);
 
 
 
