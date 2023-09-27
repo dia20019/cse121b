@@ -12,40 +12,32 @@ let profilePicture = "images/FotoAUDpng.png";
 const nameElement = document.getElementByID('name');
 const foodElement = document.getElementByID('food');
 const yearElement = document.querySelector('#year');
-const imageElement = document.querySelector('images/FotoAUDpng.png');
-
+const imgElement = document.getElementsByTagName('img')[0];
 
 
 
 
 /* Step 4 - Adding Content */
 nameElement.innerHTML =`<strong>${fullName}</strong>`;
-yearElement.textContent = `${currentYear}`;
+yearElement.textContent = currentYear;
 imageElement.setAttribute('src', profilePicture);
-imageElement.setAttribute('ref',`Profile image of ${fullName}`);
+imageElement.setAttribute('alt',`Profile image of ${fullName}`);
 
 
 
 
 /* Step 5 - Array */
-let favoriteFood = [
-    "Tacos",
-    "Steak",
-    "Hamburger"
-    "Salmon"
-];
+let favoriteFood = ["Tacos", "Steak", "Hamburger", "Salmon", "Pasta"];
 
-foodElement.innerHTML += `<br>${favoriteFood}`;
-
-let singleFavoriteFood = "Birria";
-favoriteFood.push(singleFavoriteFood);
-foodElement.innerHTML += `<br>${favoriteFood}`;
+const oneFood = "Birrria";
+favoriteFood.push(oneFood);
+foodElement.innerHTML = `<br> ${favoriteFood}`;
 
 favoriteFood.shift();
-foodElement,innerHTML += `<br>${favoriteFood}`;
+foodElement,innerHTML += `<br> ${favoriteFood}`;
 
 favoriteFood.pop();
-foodElement.innerHTML += `<br>${favoriteFood}`;
+foodElement.innerHTML += `<br> ${favoriteFood}`;
 
 
 
