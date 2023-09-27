@@ -1,48 +1,44 @@
 /* W02-Task - Profile Home Page */
 
-
 /* Step 1 - Setup type tasks - no code required */
 
 /* Step 2 - Variables */
-const fullName = "Alejandro Uribe";
-const currentYear = new Date().getFullYear();
+
+const fullName = "Alejandro Uibe";
+
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+
 const profilePicture = "images/FotoAUDpng.png";
 
+
 /* Step 3 - Element Variables */
-const nameElement = document.getElementById("name");
-const foodElement = document.getElementById("food");
-const yearElement = document.querySelector("#year");
-const imgElement = document.querySelector("img");
-
-
-
+const nameElement = document.getElementById ("name");
+const foodElement = document.getElementById ("food");
+const yearElement = document.querySelector ("#year");
+const imageElement = document.querySelector("img");
 
 /* Step 4 - Adding Content */
-nameElement.innerHTML =  '<strong>' + fullName + '</strong>';
-yearElement.textContent = currentYear;
-imageElement.setAttribute("src", profilePicture);
-imageElement.setAttribute("alt", "Profile image of Alejandro Uribe");
-
+nameElement.innerHTML = `<strong>${fullName}</strong>`;
+yearElement.textContent = `${currentYear}`;
+imageElement.src = profilePicture;
+imageElement.alt = `Profile image of ${fullName}`;
 
 /* Step 5 - Array */
+let favoriteFood = ["Tacos", "Steak", "Hamburger", "Spicy Food", "Pizza", "Pasta"];
 
-const favoriteFoods = ["Tacos", "Steak", "Hamburgers"];
+foodElement.innerHTML = `<p>${favoriteFood}</p>`;
 
-foodElement.textContent = favoriteFoods.join(", ");
+let oneFood = "Birria";
 
-const newFavoriteFood = "Birria";
+favoriteFood.push (oneFood);
 
-favoriteFoods.push(newFavoriteFood);
+foodElement.innerHTML = `<br>${favoriteFood}`;
 
-foodElement.textContent=  favoriteFoods.join(", ");
+favoriteFood.shift ();
 
-favoriteFoods.shift();
+foodElement.innerHTML = `<br>${favoriteFood}`;
 
-foodElement.innerHTML += "<br>" + favoriteFoods.join("<br>");
+favoriteFood.pop ();
 
-favoriteFoods.pop();
-
-foodElement.innerHTML += "<br>" + favoriteFoods.join("<br>");
-
-
-
+foodElement.innerHTML = `<br>${favoriteFood}`;
