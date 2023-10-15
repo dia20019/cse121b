@@ -3,37 +3,41 @@
 /* Declare and initialize global variables */
 const templesElement = document.querySelector("#temples");
 let templeList = [];
+
 /* async displayTemples Function */
 function displayTemples (templeList) {
     templeList.forEach( (element) => {
-    let templeName = document.createElement("h3");
-    let newImage = document.createElement("img");
-    newImage.setAttribute("src", element.imageUrl);
-    newImage.setAttribute("alt", element.location );
-    let article = document.createElement("article");
-    article.append(templeName, newImage);
-    templesElement.appendChild(article);
-});
+        let templeName = document.createElement("h3");
+        let newImage = document.createElement("img");
+        newImage.setAttribute("src", element.imageUrl);
+        newImage.setAttribute("alt", element.location );
+        let article = document.createElement("article");
+        article.append(templeName, newImage);
+        templesElement.appendChild(article);
+    });
 }
 /* async getTemples Function using fetch()*/
 const getTemples = async () => {
     try {
         const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
         if (!response.ok) {
-            throw new Error("Network response was not ok");
+            throw new Error("Network response not ok");
         }
         const data = await response.json();
-        templeList = data; // Set the global templeList to the fetched data
-        displayTemples(templeList); // Call displayTemples function
+        templeList = data;
+        displayTemples(templeList);
         console.log(templeList);
-    } catch (error) {
+    }
+    catch (error) {
         console.error("Error fetching data:", error);
     }
 }
+
 /* reset Function */
 function reset() {
     document.getElementById("temples").innerHTML = "";
   }
+
 /* sortBy Function */
 function sortBy (temples) {
     reset ();
@@ -63,4 +67,5 @@ function sortBy (temples) {
 document.querySelector("#sortBy").addEventListener("change", () => {
     sortBy(templeList);
 });
+
 getTemples();
