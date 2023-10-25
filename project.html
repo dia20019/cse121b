@@ -98,7 +98,18 @@
         <script src='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/17.0.2/autocomplete-lhc.min.js'></script>
 
         <input type="text" id="condition" placeholder="Condition">
-              
+  <br>
+        <span class="btn-text">Notepad</span>
+
+        <form autocomplete="off"><textarea id="autoComplete" rows="20" cols="70" maxlength="12048" tabindex="1"></textarea> 
+
+        <body>
+                <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+            
+                <script>
+                    const autoCompleteJS = new autoComplete({ config });
+                </script>
+            </body>
 
 
   <footer>
@@ -109,6 +120,8 @@
     document.getElementById("year").innerHTML = new Date().getFullYear();
   </script>
   <script src="scripts/w07-task.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+
 </body>
 
 </html>
